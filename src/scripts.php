@@ -1,63 +1,59 @@
 <?php
-/**	
- *	@author		HitkoDev http://hitko.eu/videobox
- *	@copyright	Copyright (C) 2016 HitkoDev All Rights Reserved.
- *	@license	http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
- *	@package	plg_system_videobox - Videobox
- *
- *	This program is free software: you can redistribute it and/or modify
- *	it under the terms of the GNU General Public License as published by
- *	the Free Software Foundation, either version 3 of the License, or
- *	any later version.
- *
- *	This program is distributed in the hope that it will be useful,
- *	but WITHOUT ANY WARRANTY; without even the implied warranty of
- *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- *	GNU General Public License for more details.
- *
- *	You should have received a copy of the GNU General Public License
- *	along with this program. If not, see <http://www.gnu.org/licenses/>
+/**
+ * @author      HitkoDev
+ * @copyright   Copyright (C) 2016 HitkoDev
+ * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL
+ * @package     pkg_videobox - Videobox
  */
 
-// no direct access
-defined( '_JEXEC' ) or die( 'Restricted Access' );
+defined('_JEXEC') or die;
 
-jimport('joomla.form.form');
-jimport('joomla.plugin.helper');
-jimport('joomla.registry.registry');
-jimport('joomla.version');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Version;
 
-class pkg_videoboxInstallerScript {
-
-    function install($parent) {
+class pkg_videoboxInstallerScript
+{
+    public function install($parent)
+    {
         $this->in_up($parent, 'install');
     }
 
-    function update($parent) {
+    public function update($parent)
+    {
         $this->in_up($parent, 'update');
     }
 
-    function in_up($parent, $type) {
-        echo JText::_('PLG_SYSTEM_VIDEOBOX_INSTALL_DESCRIPTION');
+    private function in_up($parent, $type)
+    {
+        echo Text::_('PLG_SYSTEM_VIDEOBOX_INSTALL_DESCRIPTION');
     }
 
-    function uninstall($parent) {
-
+    public function uninstall($parent)
+    {
+        // Nothing specific for uninstall
     }
 
-    function preflight($type, $parent) {
+    public function preflight($type, $parent)
+    {
+        $version = new Version();
 
-        $jv = new JVersion();
-        if(!$jv->isCompatible('3.6')) {
-            $typing = 'installing';
-            if($type == 'update') $typing = 'updating';
-            Jerror::raiseWarning(null, 'Please update Joomla! to version 3.6 or later before ' . $typing . ' Videobox');
+        if (!$version->isCompatible('4.0'))
+        {
+            $typing = $type === 'update' ? 'updating' : 'installing';
+            Factory::getApplication()->enqueueMessage(
+                'Please update Joomla! to version 4.0 or later before ' . $typing . ' Videobox',
+                'warning'
+            );
+
             return false;
         }
 
+        return true;
     }
 
-    function postflight($type, $parent) {
-
+    public function postflight($type, $parent)
+    {
+        // Nothing specific after install/update
     }
 }
