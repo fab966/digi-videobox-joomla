@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="package" method="upgrade" version="<%= joomlaVersion %>" >
+<extension type="package" method="upgrade" version="4.0">
     <name>Videobox package</name>
     <packagename>videobox</packagename>
     <creationDate>April 2014</creationDate>
     <description>Package containing standard Videobox plugins and libraries</description>
 
-    <license><%= license %></license>
-    <author><%= author %></author>
-    <copyright><%= copyright %></copyright>
-    <authorEmail><%= mail %></authorEmail>
-    <authorUrl><%= url %></authorUrl>
-    <version><%= version %></version>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <author>HitkoDev</author>
+    <copyright>Copyright (C) 2016 HtikoDev</copyright>
+    <authorEmail>development@hitko.si</authorEmail>
+    <authorUrl>https://hitko.eu/videobox/</authorUrl>
+    <version>6.0.0-rc6</version>
 
     <scriptfile>scripts.php</scriptfile>
 
@@ -23,6 +23,7 @@
         <file type="plugin" id="twitch" group="videobox">plg_videobox_twitch.zip</file>
         <file type="plugin" id="html5" group="videobox">plg_videobox_html5.zip</file>
     </files>
+
     <updateservers>
         <server type="collection" name="pkg_videobox">https://static.htk.io/files/files/videobox/updates-joomla.xml</server>
     </updateservers>
