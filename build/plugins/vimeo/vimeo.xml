@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="plugin" group="videobox" method="upgrade" version="3.0">
-    <name>Videobox - Vimeo</name>
-    <creationDate>April 2014</creationDate>
-    <description>Video plugin for Joomla!</description>
+<extension type="plugin" group="videobox" method="upgrade" version="4.0"
+    xmlns="urn:joomla.org:extension:manifest:1.0">
 
-    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <name>plg_videobox_vimeo</name>
+    <creationDate>August 2023</creationDate>
     <author>HitkoDev</author>
-    <copyright>Copyright (C) 2016 HtikoDev</copyright>
     <authorEmail>development@hitko.si</authorEmail>
     <authorUrl>https://hitko.eu/videobox/</authorUrl>
-    <version>6.0.0-rc6</version>
+    <copyright>Copyright (C) 2016 HitkoDev</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>6.0.0</version>
+    <description>PLG_VIDEOBOX_VIMEO_XML_DESCRIPTION</description>
 
     <files>
         <filename plugin="vimeo">vimeo.php</filename>
-        <filename plugin="vimeo">index.html</filename>
+        <filename>index.html</filename>
     </files>
+
     <config>
         <fields name="params">
-
+            <!-- Qui puoi aggiungere eventuali opzioni di configurazione -->
         </fields>
     </config>
 </extension>
