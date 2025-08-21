@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="library" method="upgrade" version="3.0">
+<extension type="plugin" group="videobox" method="upgrade" version="4.0" xmlns="urn:joomla.org:extension:manifest:1.0">
     <name>Videobox library</name>
     <libraryname>videobox</libraryname>
     <creationDate>April 2014</creationDate>
