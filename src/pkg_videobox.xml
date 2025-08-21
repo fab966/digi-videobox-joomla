@@ -2,11 +2,10 @@
 <extension type="package" method="upgrade" version="4.0">
     <name>Videobox package</name>
     <packagename>videobox</packagename>
-    <creationDate>April 2014</creationDate>
+    <creationDate>August 2025</creationDate>
     <description>Package containing standard Videobox plugins and libraries</description>
-
     <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
-    <author>HitkoDev</author>
+    <author>Fab966 and HitkoDev</author>
     <copyright>Copyright (C) 2016 HtikoDev</copyright>
     <authorEmail>development@hitko.si</authorEmail>
     <authorUrl>https://hitko.eu/videobox/</authorUrl>
@@ -28,3 +27,4 @@
         <server type="collection" name="pkg_videobox">https://static.htk.io/files/files/videobox/updates-joomla.xml</server>
     </updateservers>
 </extension>
+
